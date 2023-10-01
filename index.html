@@ -169,6 +169,417 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/01/tools-in-Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="犹大的门徒">
+      <meta itemprop="description" content="唤询这个小孩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唤问">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/01/tools-in-Linux/" class="post-title-link" itemprop="url">tools in Linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-01 10:21:31 / 修改时间：11:27:10" itemprop="dateCreated datePublished" datetime="2023-10-01T10:21:31+08:00">2023-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h2 id="openssl"><a href="#openssl" class="headerlink" title="openssl"></a>openssl</h2><p>加解密命令库</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
+<p>sudo apt-get install openssl</p>
+</blockquote>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li><p>加解密</p>
+<blockquote>
+<p>openssl enc [cipher_type] </p>
+</blockquote>
+<ul>
+<li>-e： 加密</li>
+<li>-d：解密</li>
+<li>-in [file]：指定输入文件</li>
+<li>-out [file]：指定输出文件</li>
+<li>-K：指定密钥（十六进制形式）（注意K大写）</li>
+<li>-iv：指定初始向量（十六进制形式）</li>
+</ul>
+</li>
+</ul>
+<h2 id="ghex-bless"><a href="#ghex-bless" class="headerlink" title="ghex&#x2F;bless"></a>ghex&#x2F;bless</h2><p>两者均为二进制文件编辑器。均可通过apt直接安装。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/01/Virtual-Machine/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="犹大的门徒">
+      <meta itemprop="description" content="唤询这个小孩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唤问">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/01/Virtual-Machine/" class="post-title-link" itemprop="url">Virtual Machine</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-01 09:23:20 / 修改时间：11:17:43" itemprop="dateCreated datePublished" datetime="2023-10-01T09:23:20+08:00">2023-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">常用知识</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="网络模式（以VirtualBox为例）"><a href="#网络模式（以VirtualBox为例）" class="headerlink" title="网络模式（以VirtualBox为例）"></a>网络模式（以VirtualBox为例）</h2><p>VirtualBox提供5 种网络模式，分别是仅主机网络（Host-only networking）、内部网络（Inte  rnal networking）、桥接网络（Bridged networking）、网络地址转换（NAT）、 NAT 网络（NAT Network）。 不同模式的连接情况如下</p>
+<ol>
+<li>仅主机网络模式： 虚拟机网卡连接到主机上，但是主机不为虚拟机提供任何网络服务；</li>
+<li>内部网络模式： 虚拟机之间互相连接，但不与主机连接；</li>
+<li>桥接模式： 虚拟机直接连接到网络中，与主机没有连接关系；</li>
+<li>网络地址转换模式： 虚拟机网卡连接到主机上，主机充当路由器的作用，负责将虚拟机的数据包进行地址转换之后发到网络上，再将网络上返回 的包进行地址转换后发送给虚拟机；</li>
+<li>NAT 网络模式： 在网络地址转换模式的基础上增加了内部网络功能。</li>
+</ol>
+<p>不同网络模式下， 虚拟机与主机、 虚拟机与其他虚拟机、 虚拟机与 Internet网络的连接情况如下表：</p>
+<table>
+<thead>
+<tr>
+<th>mode</th>
+<th>VM-&gt;Host</th>
+<th>VM&lt;-Host</th>
+<th>VM1&lt;-&gt;VM2</th>
+<th>VM-&gt;Internet</th>
+<th>VM&lt;-Internet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Host-only</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Internal</td>
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr>
+<td>Bridged</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>NAT</td>
+<td>T</td>
+<td>端口转发</td>
+<td>F</td>
+<td>T</td>
+<td>端口转发</td>
+</tr>
+<tr>
+<td>NAT Network</td>
+<td>T</td>
+<td>端口转发</td>
+<td>T</td>
+<td>T</td>
+<td>端口转发</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/01/Linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="犹大的门徒">
+      <meta itemprop="description" content="唤询这个小孩">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唤问">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/10/01/Linux/" class="post-title-link" itemprop="url">Linux</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-01 09:14:29 / 修改时间：11:26:38" itemprop="dateCreated datePublished" datetime="2023-10-01T09:14:29+08:00">2023-10-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">常用知识</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+
+<h2 id="Linux-系统文件架构"><a href="#Linux-系统文件架构" class="headerlink" title="Linux 系统文件架构"></a>Linux 系统文件架构</h2><p><img src="/images/Linux%E6%96%87%E4%BB%B6%E6%9E%B6%E6%9E%84.png" alt="Linux文件架构"></p>
+<ul>
+<li>&#x2F;bin: 存放常用的终端命令的目录，例如 ls、mount、rm 等等;</li>
+<li>&#x2F;dev: 存放所有的设备文件，指系统上的各种硬件设备，包括硬盘驱动器；</li>
+<li>&#x2F;etc: 存放系统的全局配置文件，这些配置文件会影响系统所有用户的系统环境;</li>
+<li>&#x2F;home: 存放用户工作目录，每个用户在该目录下都有自己的工作目录;</li>
+<li>&#x2F;lib: 存放动态库和内核模块;</li>
+<li>&#x2F;mnt: 作为临时设备的一个挂载点，例如网络文件系统;</li>
+<li>&#x2F;proc: 一个虚拟文件系统，为内核提供向进程发送信息的机制，可以从中读取进程状态;</li>
+<li>&#x2F;tmp: 存放应用程序使用的临时文件:</li>
+<li>&#x2F;usr: 存放大多数应用程序，并复制部分根目录结构，包括 &#x2F;usr&#x2F;bin&#x2F;和 &#x2F;usr&#x2F;lib&#x2F;;</li>
+<li>&#x2F;var: 存放可变数据，例如日志，数据库，网站和临时脱机 (电子邮件等)文件，其中 &#x2F;var&#x2F;log 目录保存了系统日志文件。</li>
+</ul>
+<h2 id="Linux-常用命令"><a href="#Linux-常用命令" class="headerlink" title="Linux 常用命令"></a>Linux 常用命令</h2><h3 id="常规命令"><a href="#常规命令" class="headerlink" title="常规命令"></a>常规命令</h3><ul>
+<li><blockquote>
+<p>pwd</p>
+</blockquote>
+显示终端当前工作路径</li>
+</ul>
+<h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><ul>
+<li><blockquote>
+<p>whereis [file_name]</p>
+</blockquote>
+<p>用于查找文件</p>
+</li>
+<li><blockquote>
+<p>cp [file] [new_file]</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>rm [file_name]</p>
+</blockquote>
+<p>删除</p>
+<ul>
+<li>-r 递归删除，用于删除整个文件夹</li>
+<li>-f 强制删除，不建议使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="文件编辑与查看"><a href="#文件编辑与查看" class="headerlink" title="文件编辑与查看"></a>文件编辑与查看</h3><ul>
+<li><blockquote>
+<p>touch [file_name]</p>
+</blockquote>
+<p>用于修改文件或者目录的时间属性，包括存取时间和更改时间。若文件不存在，系统会用于创建文件 </p>
+</li>
+<li><blockquote>
+<p>head</p>
+</blockquote>
+<p>查看文件开头部分内容；</p>
+<ul>
+<li>-n：以行为单位</li>
+<li>-c：以字节为单位</li>
+</ul>
+<p>例：</p>
+<blockquote>
+<p>head -c 55 picture.bmp &gt; head</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>tail</p>
+</blockquote>
+<p>查看文件内容</p>
+<ul>
+<li><p>-n：以行为单位</p>
+<ul>
+<li><blockquote>
+<p>tail -n 10 [file]</p>
+</blockquote>
+<p>显示最后10行</p>
+</li>
+<li><blockquote>
+<p>tail -n +10 [file]</p>
+</blockquote>
+<p>显示从第十行到末尾</p>
+</li>
+</ul>
+</li>
+<li><p>-c：以字节为单位</p>
+<p>同上</p>
+</li>
+</ul>
+</li>
+<li><blockquote>
+<p>diff</p>
+</blockquote>
+<p>比较两个文件的内容</p>
+<ul>
+<li>-q：两文件的不同</li>
+<li>-s：两文件的相同</li>
+</ul>
+</li>
+<li><blockquote>
+<p>hexdump</p>
+</blockquote>
+<ul>
+<li>-n length：格式化输出文件的前length个字节</li>
+<li>-C：输出规范的十六进制和ASCII码</li>
+<li>-b：单字节八进制显示</li>
+<li>-c：单字节字符显示</li>
+<li>-d：双字节十进制显示</li>
+<li>-o：双字节八进制显示</li>
+<li>-x：双字节十六进制显示</li>
+<li>-s：从偏移量开始输出</li>
+<li>-e： 指定格式字符串</li>
+</ul>
+</li>
+</ul>
+<h3 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h3><ul>
+<li><blockquote>
+<p>ifconfig</p>
+</blockquote>
+查看网络设置</li>
+</ul>
+<h3 id="密码学操作"><a href="#密码学操作" class="headerlink" title="密码学操作"></a>密码学操作</h3><ul>
+<li><blockquote>
+<p>md5sum</p>
+</blockquote>
+计算文件的md5值</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/30/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -384,15 +795,19 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
