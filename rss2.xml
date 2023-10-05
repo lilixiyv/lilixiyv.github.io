@@ -133,11 +133,15 @@
       <guid>http://example.com/2023/09/29/hello-world/</guid>
       <pubDate>Fri, 29 Sep 2023 02:59:43 GMT</pubDate>
       
-      <description>&lt;p&gt;欢迎来到我的个人博客！&lt;/p&gt;</description>
+        
+        
+      <description>&lt;p&gt;欢迎来到我的个人博客！&lt;/p&gt;
+</description>
+        
       
       
       
-      <content:encoded><![CDATA[<p>欢迎来到我的个人博客！</p><span id="more"></span><p>在这里，我尝试通过发布博客来使用某种关于个人发展、洁净世界等到意识形态将”我”唤问，从而实现某种享乐。显然，我是个蹩脚的学习者，磕磕绊绊地生硬使用着随便听来的术语。</p><p>欢迎各位的指正！</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>欢迎来到我的个人博客！</p>]]></content:encoded>
       
       
       
