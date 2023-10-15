@@ -9,8 +9,80 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>唤询这个小孩</description>
-    <pubDate>Sun, 08 Oct 2023 09:54:51 GMT</pubDate>
+    <pubDate>Thu, 12 Oct 2023 08:39:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>GO-Fyne</title>
+      <link>http://example.com/2023/10/12/GO-Fyne/</link>
+      <guid>http://example.com/2023/10/12/GO-Fyne/</guid>
+      <pubDate>Thu, 12 Oct 2023 07:01:44 GMT</pubDate>
+      
+      <description>&lt;p&gt;学习GO语言的Fyne框架&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>学习GO语言的Fyne框架</p><span id="more"></span><h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="基本环境"><a href="#基本环境" class="headerlink" title="基本环境"></a>基本环境</h3><p>Fyne 需要存在 3 个基本元素，Go 工具（至少 1.12 版）、一个 C 编译器（用于连接系统图形驱动程序）和一个系统图形驱动程序。</p><p>linux下需要</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install golang gcc libgl1-mesa-dev xorg-dev</span><br></pre></td></tr></table></figure><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>见Fyne的github页面</p><h3 id="简单程序"><a href="#简单程序" class="headerlink" title="简单程序"></a>简单程序</h3><ol><li>使用 app.New() 创建一个应用程序实例</li><li>使用 app.NewWindow() 打开一个窗口</li><li>定义一个小部件树，在窗口上使用 SetContent() 将其设置为主要内容</li><li>通过在窗口上调用 ShowAndRun() 来显示应用程序 UI</li></ol><h3 id="应用和事件"><a href="#应用和事件" class="headerlink" title="应用和事件"></a>应用和事件</h3><p> GUI 应用程序需要运行一个事件（有时称为 runloop）来处理用户交互和绘图事件。</p><p>在 Fyne 中，这是使用<code>App.Run()</code> 或<code>Window.ShowAndRun()</code>函数开始的。必须从<code>main()</code>函数中设置代码的末尾调用其中之一。</p><p>一个应用程序应该只有一个运行循环，因此应该只在代码中调用一次<code>Run()</code>。再次调用它会导致错误。</p><p>对于桌面运行时，可以通过调用<code>App.Quit()</code> 直接退出应用程序（移动应用程序不支持此功能）（通常在开发人员代码中不需要）。关闭所有窗口后，应用程序也将退出。在应用程序退出<code>Run()</code>之前不会调用之后执行的函数。</p><h3 id="更新GUI的内容"><a href="#更新GUI的内容" class="headerlink" title="更新GUI的内容"></a>更新GUI的内容</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一步是将要更新的小部件分配给变量。</span></span><br><span class="line">clock := widget.NewLabel(<span class="string">&quot;&quot;</span>)</span><br><span class="line">w.SetContent(clock)</span><br><span class="line"><span class="comment">//将标签的内容设置为当前时间 Time.Format</span></span><br><span class="line">formatted := time.Now().Format(<span class="string">&quot;Time: 03:04:05&quot;</span>)</span><br><span class="line">clock.SetText(formatted)</span><br></pre></td></tr></table></figure><h3 id="窗口处理"><a href="#窗口处理" class="headerlink" title="窗口处理"></a>窗口处理</h3><ul><li><p>使用<code>App.NewWindow()</code>创建窗口</p></li><li><p>使用<code>show()</code>展示</p></li><li><p>默认窗体大小就是其Content面板上元素的大小。可以使用<code>Window.Resize()</code>方法设置窗体大小，传入一个宽和高，这个宽高不会受设备实际像素影响。例如让一个窗口显示默认正方形(桌面环境可能存在导致窗口小于请求的限制；移动设备通常会忽略窗体大小，因为移动设备只能以全屏显示)</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w.Resize(fyne.NewSize(<span class="number">100</span>, <span class="number">100</span>))</span><br></pre></td></tr></table></figure></li></ul><h4 id="设置多窗口"><a href="#设置多窗口" class="headerlink" title="设置多窗口"></a>设置多窗口</h4><ul><li>创建多个窗口，并分别调用<code>show()</code>函数</li><li>使用<code>Window</code>的<code>SetMaster()</code>函数设置主窗口</li><li>可以在一个窗口内创建一个按钮，使按钮打开新窗口，新窗口会出现在当前活动内容之上。</li></ul><h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><ol><li><a href="https://zhuanlan.zhihu.com/p/149095568">Go 每日一库之 fyne - 知乎 (zhihu.com)</a></li><li></li></ol>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/Go/">Go</category>
+      
+      
+      <category domain="http://example.com/tags/Go/">Go</category>
+      
+      <category domain="http://example.com/tags/%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91/">应用程序开发</category>
+      
+      
+      <comments>http://example.com/2023/10/12/GO-Fyne/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>SecurityProtocol_BitCommitment</title>
+      <link>http://example.com/2023/10/12/SecurityProtocol_BitCommitment/</link>
+      <guid>http://example.com/2023/10/12/SecurityProtocol_BitCommitment/</guid>
+      <pubDate>Thu, 12 Oct 2023 02:09:23 GMT</pubDate>
+      
+      <description>&lt;p&gt;比特承诺&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>比特承诺</p><span id="more"></span><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="阶段"><a href="#阶段" class="headerlink" title="阶段"></a>阶段</h3><ul><li><p>承诺阶段</p></li><li><p>打开阶段</p></li></ul><h3 id="安全性质"><a href="#安全性质" class="headerlink" title="安全性质"></a>安全性质</h3><ul><li><p>隐藏性</p></li><li><p>绑定性：给定承诺阶段的交互信息，B只能接受一个合法承诺，A不能在打开阶段改变自己承诺的比特</p></li></ul><h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><ul><li>对称加密函数</li><li>单向散列函数</li><li>伪随机数发生器</li><li>困难问题-Pedersen承诺协议</li></ul><h3 id="对称加密函数"><a href="#对称加密函数" class="headerlink" title="对称加密函数"></a>对称加密函数</h3><ol><li>系统公开参数：基于可信第三方学选取安全的对称加密算法E和相应的解密算法D</li><li>承诺阶段：Alice承诺b<ol><li>Bob产生随机比特串R，并发送给Alice（随机数R是为了保证绑定性，否则Alice易于找到$K’$满足$D_{K’}(E_K(b))&#x3D;b’,b’\neq b$）</li><li>A将$E_K(R,b)$发送给Bob</li></ol></li><li>打开阶段：<ol><li>Alice发送K给Bob</li><li>Bob解密消息</li></ol></li></ol>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/">安全协议</category>
+      
+      
+      <category domain="http://example.com/tags/%E8%AF%BE%E4%B8%9A/">课业</category>
+      
+      
+      <comments>http://example.com/2023/10/12/SecurityProtocol_BitCommitment/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>WebContentSecurity-1</title>
+      <link>http://example.com/2023/10/09/WebContentSecurity-1/</link>
+      <guid>http://example.com/2023/10/09/WebContentSecurity-1/</guid>
+      <pubDate>Mon, 09 Oct 2023 07:03:11 GMT</pubDate>
+      
+      <description>&lt;p&gt;网络内容安全&lt;/p&gt;
+&lt;p&gt;第一章——网络信息内容获取技术&lt;/p&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>网络内容安全</p><p>第一章——网络信息内容获取技术</p><span id="more"></span><h2 id="网络信息内容获取模型"><a href="#网络信息内容获取模型" class="headerlink" title="网络信息内容获取模型"></a>网络信息内容获取模型</h2><h3 id="互联网信息类型"><a href="#互联网信息类型" class="headerlink" title="互联网信息类型"></a>互联网信息类型</h3><h4 id="网络媒体形态"><a href="#网络媒体形态" class="headerlink" title="网络媒体形态"></a>网络媒体形态</h4><ul><li>广播式媒体</li><li>交互式媒体</li></ul><h4 id="网络信息类型"><a href="#网络信息类型" class="headerlink" title="网络信息类型"></a>网络信息类型</h4><ul><li>网络媒体信息</li><li>网络通信信息</li></ul><h4 id="发布信息类型"><a href="#发布信息类型" class="headerlink" title="发布信息类型"></a>发布信息类型</h4><ul><li>文本信息</li><li>图像信息</li><li>音频信息</li><li>视频信息</li></ul><h4 id="媒体发布方式"><a href="#媒体发布方式" class="headerlink" title="媒体发布方式"></a>媒体发布方式</h4><ul><li>直接匿名浏览</li><li>需要身份认证的网络信息发布</li></ul><h4 id="网页形态"><a href="#网页形态" class="headerlink" title="网页形态"></a>网页形态</h4><ul><li>静态网页</li><li>动态网页</li></ul><h4 id="信息交互协议"><a href="#信息交互协议" class="headerlink" title="信息交互协议"></a>信息交互协议</h4><ul><li>网页浏览：HTTP</li><li>文件传输</li><li>电子邮件</li><li>聊天工具</li><li>多媒体交互工具</li></ul><h3 id="网络信息内容获取模型-1"><a href="#网络信息内容获取模型-1" class="headerlink" title="网络信息内容获取模型"></a>网络信息内容获取模型</h3><p><img src="/../images/WebContentSecurity-1/%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E5%86%85%E5%AE%B9%E8%8E%B7%E5%8F%96%E6%A8%A1%E5%9E%8B.png" alt="网络信息内容获取模型"></p><ul><li>信息检索</li><li>信息推荐（信息推送）</li><li>信息交互</li><li>信息浏览</li></ul><h3 id="网络媒体信息获取原理"><a href="#网络媒体信息获取原理" class="headerlink" title="网络媒体信息获取原理"></a>网络媒体信息获取原理</h3><h4 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h4><p>理论上为整个国际互联网</p><h4 id="网上采集算法"><a href="#网上采集算法" class="headerlink" title="网上采集算法"></a>网上采集算法</h4><p>网上采集算法，又称为网络爬虫 (Web Crawler) 、网络蜘蛛 (Web Spider) 或Web信息采集器，是一个自动下载网页的计算机程序或自动化脚本，是搜索引擎的重要组成部分。</p><h3 id="网络媒体信息获取的分类"><a href="#网络媒体信息获取的分类" class="headerlink" title="网络媒体信息获取的分类"></a>网络媒体信息获取的分类</h3><h4 id="全网信息获取"><a href="#全网信息获取" class="headerlink" title="全网信息获取"></a>全网信息获取</h4><p>获取-显示</p><h4 id="定点信息获取"><a href="#定点信息获取" class="headerlink" title="定点信息获取"></a>定点信息获取</h4><h4 id="基于主题的信息获取和元搜索"><a href="#基于主题的信息获取和元搜索" class="headerlink" title="基于主题的信息获取和元搜索"></a>基于主题的信息获取和元搜索</h4><p>元搜索引擎又称多搜索引擎,它可以同时查找多个单搜索引擎的www站点。</p><p>按其搜索机制可分为并列式和串行式。</p><ul><li>并行式元搜索引擎指将查询要求同时发向各个独立的搜索引擎,然后将结果按特定的顺序提供给用户。</li><li>串行式元搜索引擎是将查询要求先发给某个独立的搜索引擎,待其返回结果再将请求发给另一个搜索引擎</li></ul><p>并行式元搜索引擎运行模式好,搜索时间短。</p><p>高级检索功能：</p><ul><li>使用布尔逻辑符检索</li><li>最后更新页面(时间检索)</li><li>域名过滤Domain Filter</li><li>成人过滤(Adult Filter </li><li>语言选择(Language Selection) </li><li>结果展示 (Results Display) : 排序</li></ul><h4 id="信息获取过程"><a href="#信息获取过程" class="headerlink" title="信息获取过程"></a>信息获取过程</h4><ol><li>网络通信信息镜像</li><li>网络交互数据重组</li><li>通信协议数据恢复</li><li>网络通信信息存储</li></ol><h2 id="搜索引擎技术"><a href="#搜索引擎技术" class="headerlink" title="搜索引擎技术"></a>搜索引擎技术</h2><ul><li><p>中文搜索引擎的关键技术：</p><ul><li><p>网页内容分析</p></li><li><p>网页索引</p></li><li><p>查询解析</p></li><li><p>相关性计算</p></li></ul></li><li><p>概念</p><p><img src="/../images/WebContentSecurity-1/%E9%80%9A%E7%94%A8%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5.png" alt="通用搜索引擎相关概念"></p></li></ul><h3 id="网上采集算法-1"><a href="#网上采集算法-1" class="headerlink" title="网上采集算法"></a>网上采集算法</h3><ul><li><p>网上采集算法，又称为网络爬虫 (Web Crawler) 、网络蜘蛛 (Web Spider) 或Web信息采集器，是一个自动下载网页的计算机程序或自动化脚本，是搜索引擎的重要组成部分。</p></li><li><p>工作原理</p><p><img src="/../images/WebContentSecurity-1/%E7%BD%91%E4%B8%8A%E9%87%87%E9%9B%86%E7%AE%97%E6%B3%95%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.png" alt="网上采集算法工作原理"></p></li><li><p>分类（实际的网络爬虫多用多个爬虫技术相结合）</p><ul><li>通用网络爬虫 (General Purpose Web Crawler)</li><li>聚焦网络爬虫 (Focused Web Crawler)</li><li>增量式网络爬虫 (Incremental Web Crawler)</li><li>深层网络爬虫 (Deep Web Crawler)</li></ul></li><li></li></ul><h2 id="数据挖掘技术"><a href="#数据挖掘技术" class="headerlink" title="数据挖掘技术"></a>数据挖掘技术</h2><h2 id="信息推荐技术"><a href="#信息推荐技术" class="headerlink" title="信息推荐技术"></a>信息推荐技术</h2><h2 id="信息还原技术"><a href="#信息还原技术" class="headerlink" title="信息还原技术"></a>信息还原技术</h2>]]></content:encoded>
+      
+      
+      <category domain="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%86%85%E5%AE%B9%E5%AE%89%E5%85%A8/">网络内容安全</category>
+      
+      
+      <category domain="http://example.com/tags/%E8%AF%BE%E4%B8%9A/">课业</category>
+      
+      
+      <comments>http://example.com/2023/10/09/WebContentSecurity-1/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ITDB-2-RelationalDB</title>
@@ -23,7 +95,7 @@
       
       
       
-      <content:encoded><![CDATA[<p>课上学习的关于数据库系统的一些基本知识</p><p>第二章-关系数据库</p><span id="more"></span><h2 id="关系数据结构及形式化定义"><a href="#关系数据结构及形式化定义" class="headerlink" title="关系数据结构及形式化定义"></a>关系数据结构及形式化定义</h2><h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><h4 id="域"><a href="#域" class="headerlink" title="域"></a>域</h4><p>域是一组具有相同数据类型的值的集合</p><ul><li>值的集合是有限的、且不重复</li><li>集合的概念要求集合中的元素是不重复的</li><li>同一数据类型</li></ul><h4 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h4><ul><li><p>笛卡尔积：给定一组域$D_1，D_2，…，D_n$，允许其中某些域是相同的。$D_1，D_2，…，D_n$的笛卡尔积为： </p><p>$$D_1\times D_2\times …\times D_n&#x3D;{(d_1,d_2,…,d_n)|d_i\in D_i,i&#x3D;1,2,…,n}$$</p><ul><li><p>笛卡尔积是所有域的所有取值的一个组合</p></li><li><p>组合结果不允许重复</p></li></ul></li><li><p>元组：笛卡尔积中的每一个元素称为一个n元组，简称元组</p></li><li><p>分量：元组中的每一个值$d_i$称为一个分量</p></li><li><p>基数：集合中包含元素的个数</p></li><li><p>笛卡尔积的表示方法：</p><ul><li>可表示为一张二维表，每行对应一个元组，每列对应一个域</li></ul></li></ul><h4 id="关系-1"><a href="#关系-1" class="headerlink" title="关系"></a>关系</h4><ul><li>定义<ul><li>$D_1，D_2，…，D_n$的子集称为在域$D_1，D_2，…，D_n$上的关系</li><li>表示：$R(D_1，D_2，…，D_n)$</li><li>$R$：关系名，$n$：关系的目或度</li></ul></li><li>元组：关系中的每个元素为关系中的元组，通常用$t$表示</li><li>单元关系与二元关系：$n$分别为1和2</li><li>表示：<ul><li>关系是一个二维表</li><li>表的每行对应一个元组</li><li>表的每列对应一个域。</li></ul></li><li>属性：<ul><li>关系中不同列可在相同域上</li><li>必须对每列起一个名字,称为属性(attribute)。</li><li>$n$目关系有$n$个属性</li></ul></li><li>码&#x2F;键<ul><li>候选码：若关系中的某一属性组的值能<em>唯一地标识一个元组</em>,而<em>其子集不能</em>，则称该属性组为候选码(candidate key)。</li><li>超键：可唯一标识一个元组的属性组</li><li>全码：关系模式的所有属性组是这个关系模式的候选码，则称为全码</li><li>主键&#x2F;码：若一个关系有多个候选码则选定其中一个为主码(primary key)。</li><li>主属性<ul><li>候选码的诸属性称为主属性</li><li>不包含在任何候选码中的属性成为非主属性&#x2F;非码属性</li></ul></li><li>外键&#x2F;码：设F是基本关系R的一个或一组属性，但不是关系R的码，如果F与基本关系S的主码$K_S$相对应，则称F是基本关系R的外部码(foreign key),简称外码。</li></ul></li><li>实体间的关系<ul><li>实体之间的关系依赖主键-外键关联实现</li></ul></li><li>三类关系<ul><li>基本关系（基本表或基表）<ul><li>实际存在的表，是实际存储数据的逻辑表示</li><li>性质<ul><li>列是同质的：每列的分量来自同一域</li><li>不同列可在同一域上</li><li>列的顺序无关，可任意交换列的次序</li><li>行的顺序无关</li><li>任两个元组的候选码不可相同</li><li>分量必须取原子值</li></ul></li></ul></li><li>查询表<ul><li>查询结果对应的表</li></ul></li><li>视图表<ul><li>由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据</li></ul></li></ul></li></ul><h3 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul><li>关系模式(Relation Schema)是型(Type)，是结构</li><li>关系是值(二维表)</li><li>同一关系模式下，可有很多的关系</li><li>关系模式是关系的结构,关系是关系模式在某一时刻的数据</li><li>关系模式是稳定的;而关系是某一时刻的值，是随时间可能变化的</li><li>关系模式是对关系的描述</li></ul><h3 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ul><li>在给定应用领域中，所有关系的集合构成一个关系数据库</li><li>关系数据库的型与值<ul><li>型：关系数据库模式（schema），是对关系数据库结构的描述</li><li>值：关系模式在某一时刻对应的关系的集合，通常称为关系数据库（RDB）</li></ul></li></ul><h3 id="关系模型的存储结构"><a href="#关系模型的存储结构" class="headerlink" title="关系模型的存储结构"></a>关系模型的存储结构</h3><h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><h3 id="基本的关系操作"><a href="#基本的关系操作" class="headerlink" title="基本的关系操作"></a>基本的关系操作</h3><ul><li><p>常用关系操作</p><ul><li><p>查询操作：8种（其中5种为基本操作）</p><ul><li><p>选择（$\sigma$）、投影（$\pi$）、连接（$\bowtie$）、除（$\div$）、并（$\cup$）、差（$-$）、交（$\cap$）、笛卡尔积（$\times$）</p></li><li><p>其中并、差、笛卡尔积、投影和选择5种运算为基本运算。</p></li><li><p>其他运算的表示：</p><ul><li><p>交：</p><p>$R\cap S&#x3D;R-(R-S)$</p></li><li><p>连接：</p><p>$R \underset{A\Theta B}{\bowtie} S&#x3D; \sigma_{A\Theta B}(R\times S)$</p></li><li><p>除：</p><p>$R(X,Y)\div S(Y,Z)&#x3D;\pi_X(R)-\pi_X(\pi_X(R)\times\pi_Y(S)-R)$</p></li></ul></li></ul></li><li><p>数据更新：插入、删除、修改</p></li></ul></li><li><p>数据操作的特点</p><ul><li>集合操作方式:操作的对象和结果都是集合，一次一集合的方式</li></ul></li></ul><h3 id="关系数据库语言的分类"><a href="#关系数据库语言的分类" class="headerlink" title="关系数据库语言的分类"></a>关系数据库语言的分类</h3><h4 id="关系代数语言"><a href="#关系代数语言" class="headerlink" title="关系代数语言"></a>关系代数语言</h4><ul><li>用对关系的运算来表达查询要求，对关系代数表达式求值</li><li>代表：ISBL</li></ul><h4 id="关系演算语言：用谓词来表达查询要求（选学）"><a href="#关系演算语言：用谓词来表达查询要求（选学）" class="headerlink" title="关系演算语言：用谓词来表达查询要求（选学）"></a>关系演算语言：用谓词来表达查询要求（选学）</h4><h4 id="具有关系代数和关系演算双重特点的语言"><a href="#具有关系代数和关系演算双重特点的语言" class="headerlink" title="具有关系代数和关系演算双重特点的语言"></a>具有关系代数和关系演算双重特点的语言</h4><ul><li>代表：SQL</li></ul><h2 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h2><p>关系的三类完整性约束</p><ul><li>关系的两个不变性：<ul><li>实体完整性和参照完整性</li><li>是关系模型必须满足的完整性约束条件</li></ul></li><li>用户定义的完整性</li></ul><h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><ul><li>实体完整性规则：基本关系$R$的主属性不可取空值（NULL）</li></ul><h3 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h3><h4 id="关系间的引用"><a href="#关系间的引用" class="headerlink" title="关系间的引用"></a>关系间的引用</h4><h4 id="外码"><a href="#外码" class="headerlink" title="外码"></a>外码</h4><ul><li>设$F$是基本关系$R$的一个或一组属性，但不是关系$R$的码，如果$F$与基本关系$S$的主码$K_S$相对应，则称$F$是基本关系$R$的外部码(foreign key),简称外码</li><li>基本关系$R$称为参照关系</li><li>基本关系$S$称为被参照关系&#x2F;目标关系</li><li>关系$R$与$S$可以相同</li><li>目标关系$S$的主码$K_S$和参照关系的外码$F$必须定义在同一个&#x2F;组域上</li><li>外码与相应主码可以不同</li></ul><h4 id="参照完整性规则"><a href="#参照完整性规则" class="headerlink" title="参照完整性规则"></a>参照完整性规则</h4><p>对于$R$中每个元组在$F$上的值必须为：</p><ul><li>等于$S$中的某个元组的主码值$K_S$</li><li>或取空值（$F$的每个属性值均为空值）</li></ul><h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><ul><li>关系代数是一种抽象的查询语言，它用关系运算表达查询</li><li>关系代数<ul><li>运算对象是关系</li><li>运算结果亦为关系</li><li>关系代数的运算符有两类：集合运算符和专门的关系运算符</li></ul></li></ul><h2 id="关系演算（选学）"><a href="#关系演算（选学）" class="headerlink" title="关系演算（选学）"></a>关系演算（选学）</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<p>课上学习的关于数据库系统的一些基本知识</p><p>第二章-关系数据库</p><span id="more"></span><h2 id="关系数据结构及形式化定义"><a href="#关系数据结构及形式化定义" class="headerlink" title="关系数据结构及形式化定义"></a>关系数据结构及形式化定义</h2><h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><h4 id="域"><a href="#域" class="headerlink" title="域"></a>域</h4><p>域是一组具有相同数据类型的值的集合</p><ul><li>值的集合是有限的、且不重复</li><li>集合的概念要求集合中的元素是不重复的</li><li>同一数据类型</li></ul><h4 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h4><ul><li><p>笛卡尔积：给定一组域$D_1，D_2，…，D_n$，允许其中某些域是相同的。$D_1，D_2，…，D_n$的笛卡尔积为： </p><p>$$D_1\times D_2\times …\times D_n&#x3D;{(d_1,d_2,…,d_n)|d_i\in D_i,i&#x3D;1,2,…,n}$$</p><ul><li><p>笛卡尔积是所有域的所有取值的一个组合</p></li><li><p>组合结果不允许重复</p></li></ul></li><li><p>元组：笛卡尔积中的每一个元素称为一个n元组，简称元组</p></li><li><p>分量：元组中的每一个值$d_i$称为一个分量</p></li><li><p>基数：集合中包含元素的个数</p></li><li><p>笛卡尔积的表示方法：</p><ul><li>可表示为一张二维表，每行对应一个元组，每列对应一个域</li></ul></li></ul><h4 id="关系-1"><a href="#关系-1" class="headerlink" title="关系"></a>关系</h4><ul><li>定义<ul><li>$D_1，D_2，…，D_n$的子集称为在域$D_1，D_2，…，D_n$上的关系</li><li>表示：$R(D_1，D_2，…，D_n)$</li><li>$R$：关系名，$n$：关系的目或度</li></ul></li><li>元组：关系中的每个元素为关系中的元组，通常用$t$表示</li><li>单元关系与二元关系：$n$分别为1和2</li><li>表示：<ul><li>关系是一个二维表</li><li>表的每行对应一个元组</li><li>表的每列对应一个域。</li></ul></li><li>属性：<ul><li>关系中不同列可在相同域上</li><li>必须对每列起一个名字,称为属性(attribute)。</li><li>$n$目关系有$n$个属性</li></ul></li><li>码&#x2F;键<ul><li>候选码：若关系中的某一属性组的值能<em>唯一地标识一个元组</em>,而<em>其子集不能</em>，则称该属性组为候选码(candidate key)。</li><li>超键：可唯一标识一个元组的属性组</li><li>全码：关系模式的所有属性组是这个关系模式的候选码，则称为全码</li><li>主键&#x2F;码：若一个关系有多个候选码则选定其中一个为主码(primary key)。</li><li>主属性<ul><li>候选码的诸属性称为主属性</li><li>不包含在任何候选码中的属性成为非主属性&#x2F;非码属性</li></ul></li><li>外键&#x2F;码：设F是基本关系R的一个或一组属性，但不是关系R的码，如果F与基本关系S的主码$K_S$相对应，则称F是基本关系R的外部码(foreign key),简称外码。</li></ul></li><li>实体间的关系<ul><li>实体之间的关系依赖主键-外键关联实现</li></ul></li><li>三类关系<ul><li>基本关系（基本表或基表）<ul><li>实际存在的表，是实际存储数据的逻辑表示</li><li>性质<ul><li>列是同质的：每列的分量来自同一域</li><li>不同列可在同一域上</li><li>列的顺序无关，可任意交换列的次序</li><li>行的顺序无关</li><li>任两个元组的候选码不可相同</li><li>分量必须取原子值</li></ul></li></ul></li><li>查询表<ul><li>查询结果对应的表</li></ul></li><li>视图表<ul><li>由基本表或其他视图表导出的表，是虚表，不对应实际存储的数据</li></ul></li></ul></li></ul><h3 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul><li>关系模式(Relation Schema)是型(Type)，是结构</li><li>关系是值(二维表)</li><li>同一关系模式下，可有很多的关系</li><li>关系模式是关系的结构,关系是关系模式在某一时刻的数据</li><li>关系模式是稳定的;而关系是某一时刻的值，是随时间可能变化的</li><li>关系模式是对关系的描述</li></ul><h3 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ul><li>在给定应用领域中，所有关系的集合构成一个关系数据库</li><li>关系数据库的型与值<ul><li>型：关系数据库模式（schema），是对关系数据库结构的描述</li><li>值：关系模式在某一时刻对应的关系的集合，通常称为关系数据库（RDB）</li></ul></li></ul><h3 id="关系模型的存储结构"><a href="#关系模型的存储结构" class="headerlink" title="关系模型的存储结构"></a>关系模型的存储结构</h3><h2 id="关系操作"><a href="#关系操作" class="headerlink" title="关系操作"></a>关系操作</h2><h3 id="基本的关系操作"><a href="#基本的关系操作" class="headerlink" title="基本的关系操作"></a>基本的关系操作</h3><ul><li><p>常用关系操作</p><ul><li><p>查询操作：8种（其中5种为基本操作）</p><ul><li><p>选择（$\sigma$）、投影（$\pi$）、连接（$\bowtie$）、除（$\div$）、并（$\cup$）、差（$-$）、交（$\cap$）、笛卡尔积（$\times$）</p></li><li><p>其中并、差、笛卡尔积、投影和选择5种运算为基本运算。</p></li><li><p>其他运算的表示：</p><ul><li><p>交：</p><p>$R\cap S&#x3D;R-(R-S)$</p></li><li><p>连接：</p><p>$R \underset{A\Theta B}{\bowtie} S&#x3D; \sigma_{A\Theta B}(R\times S)$</p></li><li><p>除：</p><p>$R(X,Y)\div S(Y,Z)&#x3D;\pi_X(R)-\pi_X(\pi_X(R)\times\pi_Y(S)-R)$</p></li></ul></li></ul></li><li><p>数据更新：插入、删除、修改</p></li></ul></li><li><p>数据操作的特点</p><ul><li>集合操作方式:操作的对象和结果都是集合，一次一集合的方式</li></ul></li></ul><h3 id="关系数据库语言的分类"><a href="#关系数据库语言的分类" class="headerlink" title="关系数据库语言的分类"></a>关系数据库语言的分类</h3><h4 id="关系代数语言"><a href="#关系代数语言" class="headerlink" title="关系代数语言"></a>关系代数语言</h4><ul><li>用对关系的运算来表达查询要求，对关系代数表达式求值</li><li>代表：ISBL</li></ul><h4 id="关系演算语言：用谓词来表达查询要求（选学）"><a href="#关系演算语言：用谓词来表达查询要求（选学）" class="headerlink" title="关系演算语言：用谓词来表达查询要求（选学）"></a>关系演算语言：用谓词来表达查询要求（选学）</h4><h4 id="具有关系代数和关系演算双重特点的语言"><a href="#具有关系代数和关系演算双重特点的语言" class="headerlink" title="具有关系代数和关系演算双重特点的语言"></a>具有关系代数和关系演算双重特点的语言</h4><ul><li>代表：SQL</li></ul><h2 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h2><p>关系的三类完整性约束</p><ul><li>关系的两个不变性：<ul><li>实体完整性和参照完整性</li><li>是关系模型必须满足的完整性约束条件</li></ul></li><li>用户定义的完整性</li></ul><h3 id="实体完整性"><a href="#实体完整性" class="headerlink" title="实体完整性"></a>实体完整性</h3><ul><li>实体完整性规则：基本关系$R$的主属性不可取空值（NULL）</li></ul><h3 id="参照完整性"><a href="#参照完整性" class="headerlink" title="参照完整性"></a>参照完整性</h3><h4 id="关系间的引用"><a href="#关系间的引用" class="headerlink" title="关系间的引用"></a>关系间的引用</h4><h4 id="外码"><a href="#外码" class="headerlink" title="外码"></a>外码</h4><ul><li>设$F$是基本关系$R$的一个或一组属性，但不是关系$R$的码，如果$F$与基本关系$S$的主码$K_S$相对应，则称$F$是基本关系$R$的外部码(foreign key),简称外码</li><li>基本关系$R$称为参照关系</li><li>基本关系$S$称为被参照关系&#x2F;目标关系</li><li>关系$R$与$S$可以相同</li><li>目标关系$S$的主码$K_S$和参照关系的外码$F$必须定义在同一个&#x2F;组域上</li><li>外码与相应主码可以不同</li></ul><h4 id="参照完整性规则"><a href="#参照完整性规则" class="headerlink" title="参照完整性规则"></a>参照完整性规则</h4><p>对于$R$中每个元组在$F$上的值必须为：</p><ul><li>等于$S$中的某个元组的主码值$K_S$</li><li>或取空值（$F$的每个属性值均为空值）</li></ul><h2 id="关系代数"><a href="#关系代数" class="headerlink" title="关系代数"></a>关系代数</h2><ul><li><p>关系代数是一种抽象的查询语言，它用关系运算表达查询</p></li><li><p>关系代数</p><ul><li>运算对象是关系</li><li>运算结果亦为关系</li><li>关系代数的运算符有两类：集合运算符和专门的关系运算符</li><li>此外还有比较运算符和逻辑运算符</li></ul></li><li><p>集合运算符</p><ul><li><p>并（$R\cup S$）</p><ul><li>$R$和$S$应具有相同的目$n$，相应的属性取自同一个域</li><li>结果仍为$n$目关系，由属于$R$或$S$的元组构成</li><li>结果不能重复</li></ul></li><li><p>差（$R-S$）</p><ul><li>$R$和$S$应具有相同的目$n$，相应的属性取自同一个域</li><li>结果仍为$n$目关系，由属于$R$且不属于$S$的元组构成</li></ul></li><li><p>交（$R\cap S$）</p><ul><li>$R$和$S$应具有相同的目$n$，相应的属性取自同一个域</li><li>结果仍为$n$目关系，由属于$R$又属于$S$的元组构成</li></ul></li><li><p>笛卡尔积（广义）</p><ul><li>$R$： $n$目关系，$k_1$个元组</li><li>$S$： $m$目关系，$k_2$个元组</li><li>$R\times S$：<ul><li>列：$(n\times m)$列元组的集合</li><li>行：$k_1\times k_2$个元组</li></ul></li></ul></li></ul></li><li><p>专门的关系运算</p><ul><li><p>记号</p><ul><li>$R,t\in R, t[A_i]$</li><li>$A,t[A], \overline{A}$</li><li>$\underset{t_rt_s}{\frown}$</li><li>象集$Z_X$</li></ul></li><li><p>选择（限制&#x2F;过滤）</p></li><li><p>投影</p><ul><li>若投影后有重复元组，则应去掉</li></ul></li><li><p>连接（$\theta$连接）</p><ul><li>从两个关系的笛卡尔积中选取属性间满足一定条件的元组</li><li>等值连接</li><li>自然连接<ul><li>操作步骤<ol><li>对两个表进行广义笛卡尔积</li><li>从广义笛卡尔积中选取在相同列上相同的元组</li><li>去掉重复列</li></ol></li><li>悬浮元组<ul><li>外连接&#x3D;自然连接+失配元组<ul><li>左外连接</li><li>右外连接</li></ul></li></ul></li></ul></li></ul></li><li><p>除</p><ul><li>$R(X,Y)\div S(Y,Z)&#x3D;\pi_X(R)-\pi_X(\pi_X(R)\times\pi_Y(S)-R)$</li></ul></li></ul></li></ul><h2 id="关系演算（选学）"><a href="#关系演算（选学）" class="headerlink" title="关系演算（选学）"></a>关系演算（选学）</h2>]]></content:encoded>
       
       
       <category domain="http://example.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</category>
@@ -172,29 +244,6 @@
       
       
       <comments>http://example.com/2023/09/30/hexo/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>http://example.com/2023/09/29/hello-world/</link>
-      <guid>http://example.com/2023/09/29/hello-world/</guid>
-      <pubDate>Fri, 29 Sep 2023 02:59:43 GMT</pubDate>
-      
-        
-        
-      <description>&lt;p&gt;欢迎来到我的个人博客！&lt;/p&gt;
-</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<p>欢迎来到我的个人博客！</p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>http://example.com/2023/09/29/hello-world/#disqus_thread</comments>
       
     </item>
     
