@@ -9,7 +9,7 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>唤询这个小孩</description>
-    <pubDate>Thu, 19 Oct 2023 02:04:21 GMT</pubDate>
+    <pubDate>Thu, 19 Oct 2023 02:14:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -22,10 +22,10 @@
       
       
       
-      <content:encoded><![CDATA[<p>HTML5学习日志</p><span id="more"></span>]]></content:encoded>
+      <content:encoded><![CDATA[<p>HTML5学习日志</p><span id="more"></span><h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ol><li><a href="https://www.w3school.com.cn/html/index.asp">HTML 教程 (w3school.com.cn)</a></li></ol>]]></content:encoded>
       
       
-      <category domain="http://example.com/categories/html/">html</category>
+      <category domain="http://example.com/categories/web%E5%BC%80%E5%8F%91/">web开发</category>
       
       
       <category domain="http://example.com/tags/%E6%95%99%E7%A8%8B/">教程</category>
@@ -247,12 +247,10 @@
       <content:encoded><![CDATA[<p>在Linux下使用过的一些工具</p><span id="more"></span><h2 id="openssl"><a href="#openssl" class="headerlink" title="openssl"></a>openssl</h2><p>加解密命令库</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssl</span><br></pre></td></tr></table></figure><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><h4 id="加解密"><a href="#加解密" class="headerlink" title="加解密"></a>加解密</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl enc [cipher_type] </span><br></pre></td></tr></table></figure><ul><li>-e： 加密</li><li>-d：解密</li><li>-in [file]：指定输入文件</li><li>-out [file]：指定输出文件</li><li>-K：指定密钥（十六进制形式）（注意K大写）</li><li>-iv：指定初始向量（十六进制形式）</li></ul><h4 id="查看PKI信息"><a href="#查看PKI信息" class="headerlink" title="查看PKI信息"></a>查看PKI信息</h4><ol><li><p>证书信息</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -noout -text -in ca.crt</span><br></pre></td></tr></table></figure></li><li><p>密钥信息（需要输入密钥加密口令）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -in server.key -text</span><br></pre></td></tr></table></figure></li><li><p>待续</p></li></ol><h3 id="PKI"><a href="#PKI" class="headerlink" title="PKI"></a>PKI</h3><ol><li><p>建立CA</p><ol><li><p>准备一个目录（假设命名为PKI）</p></li><li><p>拷贝openssl提供的配置文件&#x2F;usr&#x2F;lib&#x2F;ssl&#x2F;openssl.cnf，并按照配置文件要求创建相应文件（先创建dir,certs,crl_dir,database,new_certs_dir,serial即可)：</p><p><img src="/images/toolsinlinux/opensslconf.png" alt="opensslconf"></p><p>其中，对于 index.txt 文件，只需创建一个空文件；对于 serial 文件，创建文件后需要输入序列号，以文件形式输入的序列号应为偶数位数的 16 进制数字，如 1000，0a等。</p></li><li><p>返回 PKI 目录， 利用 openssl req 命令为 CA 生成一个自签名证书，该证书证明 CA 可信，并成为根证书：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -x509 -keyout ca.key -out ca.crt -config openssl.cnf</span><br></pre></td></tr></table></figure><p>参数含义：</p><ul><li>new: 创建一个证书请求文件，若之后指定了-x509 选项，代表创建自签名证书文件</li><li>-keyout [file]: 指定自动创建私钥时私钥的输出文件</li><li>-config [file]: 指定 req 命令的配置文件</li></ul><p>在证书生成过程中，需要输入口令（ passphrase） 与相关信息，该 CA 在每次签发证书时都会要求输入口令。另外， 还需要输入一些相关信息，例如 Country Name, Common Name 等，可以自行输入，也可以按回车键使用默认值。输出文件包括 ca.key 与 ca.crt。</p></li></ol></li><li><p>利用CA签发证书</p></li></ol><p>   假设有一个网站 PKILab.com，需要从 CA 处取得一个电子证书，可以通过以下步骤完成签发流程。  </p><ol><li><p>PKILab.com 需要生成自己的公私钥对：  </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -aes128 -out server.key 2048</span><br></pre></td></tr></table></figure></li><li><p>PKILab.com 需要生成证书请求文件（CSR）。该文件包含 PKILab.com的公钥，并会被发送给 CA，请求 CA 对公钥进行签名：  </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key server.key -out server.csr -config openssl.cnf</span><br></pre></td></tr></table></figure><p>在生成证书请求文件的过程中，对于 CommonName 域，应输入“PKILab.com”；对于extra中的attributes域，可自行输入，或直接按回车键使用默认值；对于其他域，应与CA保持一致。</p></li><li><p>CA收到证书请求文件（server.csr）后，利用自己的私钥（ca.key） 与证书（ca.crt）， 签名并生成 PKILab.com 所需的 X509 证书（server.crt）：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config openssl.cnf</span><br></pre></td></tr></table></figure></li></ol><h2 id="ghex-bless"><a href="#ghex-bless" class="headerlink" title="ghex&#x2F;bless"></a>ghex&#x2F;bless</h2><p>两者均为二进制文件编辑器。均可通过apt直接安装。</p><h2 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h2><p>网络映射器，网络扫描工具；</p><p>使用：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap [scan type(s)] [options] [target]</span><br></pre></td></tr></table></figure><p>这里的[target]表示要扫描的对象，可以是 IP 地址、网段、主机名等，同时 nmap 命令还支持自定义扫描模式、参数等，部分参数需要 sudo 权限，表1介绍常用的几种参数，其余参数以及更详尽的用法请使用 man nmap 查看。</p><table><thead><tr><th>参数</th><th>含义</th></tr></thead><tbody><tr><td>-sN</td><td>ping扫描，主机发现</td></tr><tr><td>-sT</td><td>TCP连接扫描</td></tr><tr><td>-sS</td><td>TCP SYN扫描</td></tr><tr><td>-sA</td><td>TCP ACK扫描</td></tr><tr><td>-sU</td><td>UDP 连接扫描</td></tr><tr><td>-O</td><td>操作系统扫描</td></tr><tr><td>-sV</td><td>开放端口的系统服务及版本扫描</td></tr></tbody></table>]]></content:encoded>
       
       
-      <category domain="http://example.com/categories/%E5%B7%A5%E5%85%B7/">工具</category>
+      <category domain="http://example.com/categories/Linux/">Linux</category>
       
       
       <category domain="http://example.com/tags/%E5%B7%A5%E5%85%B7/">工具</category>
-      
-      <category domain="http://example.com/tags/Linux/">Linux</category>
       
       
       <comments>http://example.com/2023/10/01/tools-in-Linux/#disqus_thread</comments>
