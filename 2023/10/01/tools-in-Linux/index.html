@@ -29,10 +29,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/toolsinlinux/opensslconf.png">
 <meta property="article:published_time" content="2023-10-01T02:21:31.000Z">
-<meta property="article:modified_time" content="2023-10-05T03:06:48.937Z">
+<meta property="article:modified_time" content="2023-10-17T09:32:39.902Z">
 <meta property="article:author" content="犹大的门徒">
-<meta property="article:tag" content="Linux">
 <meta property="article:tag" content="工具">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/toolsinlinux/opensslconf.png">
 
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-05 11:06:48" itemprop="dateModified" datetime="2023-10-05T11:06:48+08:00">2023-10-05</time>
+                <time title="修改时间：2023-10-17 17:32:39" itemprop="dateModified" datetime="2023-10-17T17:32:39+08:00">2023-10-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,6 +294,47 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config openssl.cnf</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="ghex-bless"><a href="#ghex-bless" class="headerlink" title="ghex&#x2F;bless"></a>ghex&#x2F;bless</h2><p>两者均为二进制文件编辑器。均可通过apt直接安装。</p>
+<h2 id="nmap"><a href="#nmap" class="headerlink" title="nmap"></a>nmap</h2><p>网络映射器，网络扫描工具；</p>
+<p>使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap [scan type(s)] [options] [target]</span><br></pre></td></tr></table></figure>
+
+<p>这里的[target]表示要扫描的对象，可以是 IP 地址、网段、主机名等，同时 nmap 命令还支持自定义扫描模式、参数等，部分参数需要 sudo 权限，表1介绍常用的几种参数，其余参数以及更详尽的用法请使用 man nmap 查看。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-sN</td>
+<td>ping扫描，主机发现</td>
+</tr>
+<tr>
+<td>-sT</td>
+<td>TCP连接扫描</td>
+</tr>
+<tr>
+<td>-sS</td>
+<td>TCP SYN扫描</td>
+</tr>
+<tr>
+<td>-sA</td>
+<td>TCP ACK扫描</td>
+</tr>
+<tr>
+<td>-sU</td>
+<td>UDP 连接扫描</td>
+</tr>
+<tr>
+<td>-O</td>
+<td>操作系统扫描</td>
+</tr>
+<tr>
+<td>-sV</td>
+<td>开放端口的系统服务及版本扫描</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -349,8 +390,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
               <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
           </div>
 
         
@@ -429,7 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#openssl"><span class="nav-number">1.</span> <span class="nav-text">openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">加解密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BPKI%E4%BF%A1%E6%81%AF"><span class="nav-number">1.2.2.</span> <span class="nav-text">查看PKI信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PKI"><span class="nav-number">1.3.</span> <span class="nav-text">PKI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ghex-bless"><span class="nav-number">2.</span> <span class="nav-text">ghex&#x2F;bless</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#openssl"><span class="nav-number">1.</span> <span class="nav-text">openssl</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%A7%A3%E5%AF%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">加解密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BPKI%E4%BF%A1%E6%81%AF"><span class="nav-number">1.2.2.</span> <span class="nav-text">查看PKI信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PKI"><span class="nav-number">1.3.</span> <span class="nav-text">PKI</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ghex-bless"><span class="nav-number">2.</span> <span class="nav-text">ghex&#x2F;bless</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nmap"><span class="nav-number">3.</span> <span class="nav-text">nmap</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,20 +486,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

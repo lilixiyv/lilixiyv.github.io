@@ -20,21 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="记录一些密码学应用层面的知识">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Application of Cryptography">
-<meta property="og:url" content="http://example.com/2023/10/05/Cryptography/index.html">
+  <meta name="description" content="唤询这个小孩">
+<meta property="og:type" content="website">
+<meta property="og:title" content="唤问">
+<meta property="og:url" content="http://example.com/tags/%E5%89%8D%E7%AB%AF/index.html">
 <meta property="og:site_name" content="唤问">
-<meta property="og:description" content="记录一些密码学应用层面的知识">
+<meta property="og:description" content="唤询这个小孩">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-05T02:25:55.000Z">
-<meta property="article:modified_time" content="2023-10-05T02:34:38.194Z">
 <meta property="article:author" content="犹大的门徒">
-<meta property="article:tag" content="密码学">
-<meta property="article:tag" content="应用">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/10/05/Cryptography/">
+<link rel="canonical" href="http://example.com/tags/%E5%89%8D%E7%AB%AF/">
 
 
 <script id="page-configurations">
@@ -42,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Application of Cryptography | 唤问</title>
+  <title>标签: 前端 | 唤问</title>
   
 
 
@@ -167,165 +163,57 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content tag">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/05/Cryptography/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="犹大的门徒">
-      <meta itemprop="description" content="唤询这个小孩">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="唤问">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Application of Cryptography
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-10-05 10:25:55 / 修改时间：10:34:38" itemprop="dateCreated datePublished" datetime="2023-10-05T10:25:55+08:00">2023-10-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">密码学</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">前端
+          <small>标签</small>
+        </h2>
+      </div>
 
       
-        <p>记录一些密码学应用层面的知识</p>
-<span id="more"></span>
-
-<h2 id="公钥基础设施"><a href="#公钥基础设施" class="headerlink" title="公钥基础设施"></a>公钥基础设施</h2><p>公钥基础设施（Public Key Infrastructure， PKI）是一种用公钥密码理论和技术实施和提供安全服务，具有普适性的安全基础设施。 在实际应用中， PKI 将用户身份与其公钥结合，解决公钥的可信性问题。  </p>
-<p>PKI 的重要组件包括证书机构（Certificate Authority， CA）以及数字证书。CA 负责验证用户的身份，并签发对应数字证书。数字证书则是证明证书中公钥所有权的文件，是由已经验证该公钥所有权的 CA 签发，因此，数字证书的安全性基于对 CA 的信任。  </p>
-<h2 id="X-509-数字证书"><a href="#X-509-数字证书" class="headerlink" title="X.509 数字证书"></a>X.509 数字证书</h2><p>数字证书一般包括公钥，拥有者的身份标识以及可信实体的签名。接收者可以通过验证签名来保证证书的完整性。验证成功后，接收者将会确定公钥的拥有者。 X.509 标准规定了数字证书的格式，其主要包括：</p>
-<ul>
-<li>Issuer：该域包含了签发该证书的 CA 信息；</li>
-<li>Subject：该域包含了证书中公钥的拥有者信息；</li>
-<li>Public key：该域包含了公钥信息，包括公钥算法以及具体公钥等；</li>
-<li>Signature：该域包含了签发者（ Issuer）的数字签名信息，包括签名算法以及具体签名等；</li>
-<li>Validity：该域包含了该数字证书的有效期；</li>
-<li>Serial number：每个证书都有一个独特的序列号，用于与其他证书区分；</li>
-<li>Extensions：更新版本的 X.509 证书包含可选的扩展域。</li>
-</ul>
-<h2 id="PGP-加解密技术"><a href="#PGP-加解密技术" class="headerlink" title="PGP 加解密技术"></a>PGP 加解密技术</h2><p>PGP（ Pretty Good Privacy） 由 Phil Zimmermann 于 1991 年开发， 是一种可为数据通信提供加密与身份认证的程序，常被用于电子邮件的加解密与签名， 提高了电子邮件通信的安全性。 PGP 本身是商业应用程序， 开源并具有同类功能的工具是由自由软件基金会开发的 GnuPG（ GPG）。   </p>
-
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
     </div>
 
-    
-    
-    
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-    
-      <div>
-        <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:24px;">-------------终了-------------</div>
-    
-</div>
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-10-19T10:01:31+08:00"
+              content="2023-10-19">
+          10-19
+        </time>
       </div>
-    
-        
 
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>犹大的门徒
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://example.com/2023/10/05/Cryptography/" title="Application of Cryptography">http://example.com/2023/10/05/Cryptography/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-        
-
-  <div class="followme">
-    <p>欢迎关注我的其它发布渠道</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/10/19/HTML/" itemprop="url">
+            <span itemprop="name">HTML</span>
           </a>
-        </div>
+      </div>
+
+    </header>
+  </article>
+
     </div>
   </div>
-
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
-              <a href="/tags/%E5%BA%94%E7%94%A8/" rel="tag"># 应用</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2023/10/01/tools-in-Linux/" rel="prev" title="tools in Linux">
-      <i class="fa fa-chevron-left"></i> tools in Linux
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/06/IntroductionToDatabaseSystems-Introduction/" rel="next" title="IntroductionToDatabaseSystems-Introduction">
-      IntroductionToDatabaseSystems-Introduction <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
   
   
+  
+
   
 
 
 
           </div>
           
-    
-  <div class="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC81OTAzOS8zNTUwMQ=="></div>
-  </div>
-  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -372,7 +260,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E9%92%A5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="nav-number">1.</span> <span class="nav-text">公钥基础设施</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-509-%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6"><span class="nav-number">2.</span> <span class="nav-text">X.509 数字证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PGP-%E5%8A%A0%E8%A7%A3%E5%AF%86%E6%8A%80%E6%9C%AF"><span class="nav-number">3.</span> <span class="nav-text">PGP 加解密技术</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -490,21 +377,6 @@
 
   
 
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
 
 </body>
 </html>
